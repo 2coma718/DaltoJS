@@ -792,5 +792,3 @@ document.write(`<br> ${pop}`)//* "cualquiera"
                             //? el metodo shift hace lo mismo pero elimina el del principio
 
                             
-//! sirve?//
-//? nose y en celu no sirve!!
