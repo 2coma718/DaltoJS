@@ -791,4 +791,4 @@ document.write(`<br> ${pop}`)//* "cualquiera"
                             //? y devuelve ese ultimo dato al metodo que lo llamo
                             //? el metodo shift hace lo mismo pero elimina el del principio
 
-                            
+                    //anda bien? 
