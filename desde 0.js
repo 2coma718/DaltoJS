@@ -802,4 +802,6 @@ document.write(push);
 //todo xarray.reverse(); no necesita argumentos, no devuelve nada y pone el orden al revez
                   //todo del array: " cualquiera" " un array" "Este es"
 
+                  //!llega?
+
 
