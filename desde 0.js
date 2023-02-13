@@ -777,7 +777,7 @@ document.write(`<br> ${toString[5]}`);//* "5" la coma pasa a string y la cuenta 
 let trim = xcadena.trim();//? saca los espacios en blanco al principio y final
                           //* trimStart() saca al principio y trimEnd al final 
 
-//todo                  Metodos de Cadenas
+//todo                  Metodos de Cadenas (transformadores)
 
 
 let xarray = ["Este es", " un array", " cualquiera"];
@@ -791,4 +791,15 @@ document.write(`<br> ${pop}`)//* "cualquiera"
                             //? y devuelve ese ultimo dato al metodo que lo llamo
                             //? el metodo shift hace lo mismo pero elimina el del principio
 
-                    //anda bien? 
+      
+let push = xarray.push(" cualquiera");
+document.write(xarray);
+document.write(push);
+                       //? push agrea una dato al array y devuelve la cantidad de datos 
+                       //? (no de vuelve el indice del array, osea su posición)
+
+            
+//todo xarray.reverse(); no necesita argumentos, no devuelve nada y pone el orden al revez
+                  //todo del array: " cualquiera" " un array" "Este es"
+
+
