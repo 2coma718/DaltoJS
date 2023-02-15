@@ -802,6 +802,15 @@ document.write(push);
 //todo xarray.reverse(); no necesita argumentos, no devuelve nada y pone el orden al revez
                   //todo del array: " cualquiera" " un array" "Este es"
 
-                  //!llega? a ver ahora 
 
+let unshift = yarray.unshift("Este es")//* "Este es" "Otro array" "cualquiera"
+                                       //? agrega una array al principio y devuelve
+                                       //? el length osea como push pero al principio
+
+
+
+let sort = yarray.sort()//* "cualquiera" "Este es" "Otro array"
+                        //? ordena alfabeticamente a los string y a los number por valor
+
+document.write(sort)
 
