@@ -781,7 +781,7 @@ let trim = xcadena.trim();//? saca los espacios en blanco al principio y final
 
 
 let xarray = ["Este es", " un array", " cualquiera"];
-let yarray = ["Otro array", "cualquiera"];
+let yarray = ["Otro array", "Cualquiera"];
 
 
 let pop = xarray.pop();   
@@ -793,8 +793,8 @@ document.write(`<br> ${pop}`)//* "cualquiera"
 
       
 let push = xarray.push(" cualquiera");
-document.write(xarray);
-document.write(push);
+document.write(`<br> ${xarray}`);
+document.write(`<br> ${push}`);
                        //? push agrea una dato al array y devuelve la cantidad de datos 
                        //? (no de vuelve el indice del array, osea su posición)
 
@@ -812,5 +812,5 @@ let unshift = yarray.unshift("Este es")//* "Este es" "Otro array" "cualquiera"
 let sort = yarray.sort()//* "cualquiera" "Este es" "Otro array"
                         //? ordena alfabeticamente a los string y a los number por valor
 
-document.write(`<br> ${sort}`)
+document.write(`<br> ${yarray}`)
 
