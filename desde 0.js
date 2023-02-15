@@ -812,5 +812,5 @@ let unshift = yarray.unshift("Este es")//* "Este es" "Otro array" "cualquiera"
 let sort = yarray.sort()//* "cualquiera" "Este es" "Otro array"
                         //? ordena alfabeticamente a los string y a los number por valor
 
-document.write(sort)
+document.write(`<br> ${sort}`)
 
