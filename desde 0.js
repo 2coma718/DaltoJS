@@ -781,7 +781,7 @@ let trim = xcadena.trim();//? saca los espacios en blanco al principio y final
 
 
 let xarray = ["Este es", " un array", " cualquiera"];
-let yarray = ["Otro array", "Cualquiera"];
+let yarray = ["Otro array", " Cualquiera"];
 
 
 let pop = xarray.pop();   
@@ -809,8 +809,19 @@ let unshift = yarray.unshift("Este es")//* "Este es" "Otro array" "cualquiera"
 
 
 
-let sort = yarray.sort()//* "cualquiera" "Este es" "Otro array"
+let sort = yarray.sort()//* " Calquiera" "Este es" "Otro array"
                         //? ordena alfabeticamente a los string y a los number por valor
-
+                        //? el orden de mayusculas a minusculas tiene mas importancia 
+                        //? que el alfabetico, algo que empieza con un string vacion tiene
+                        //? más prioridad que las mayusculas
 document.write(`<br> ${yarray}`)
 
+
+let split = xarray.split() 
+                           
+                           //* el primer argumento es la posicion del array a la que se va
+                           //* a aplicar los cambios, el segundo dice cuantos elementos se
+                           //* van a eliminar contando del que se empieza, y después se 
+                           //* agregan nuevos valores al array 
+                           //* escribiendo -1 te lo pone al final y en argumento 2 si pones
+                           //* 0 no borra (ns que pasa si pones -1)
