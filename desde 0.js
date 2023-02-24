@@ -817,7 +817,8 @@ let sort = yarray.sort()//* " Calquiera" "Este es" "Otro array"
 document.write(`<br> ${yarray}`)
 
 
-let split = xarray.split() 
+let split = xarray.split()
+document.write(`<br> ${split}`) 
                            
                            //* el primer argumento es la posicion del array a la que se va
                            //* a aplicar los cambios, el segundo dice cuantos elementos se
