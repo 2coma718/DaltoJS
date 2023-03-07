@@ -716,7 +716,7 @@ document.write(`<br> ${concat}`);//* "cadena cualquiera+ X texto agregado con co
 
 let starwith = xcadena.startsWith(ycadena); //? verifica si un string empieza con otro (el otro es el input)
 document.write(starwith);//* "true"
-//todo es lo mismo para el metodo ensWith()
+//todo es lo mismo para el metodo endsWith()
 
 let encontrar = xcadena.includes(ycadena);//? verifica en el string esta el string de input del metodo
 document.write(encontrar);//* "true"
@@ -817,12 +817,61 @@ let sort = yarray.sort()//* " Calquiera" "Este es" "Otro array"
 document.write(`<br> ${yarray}`)
 
 
-let split = xarray.split()
-document.write(`<br> ${split}`) 
-                           
-                           //* el primer argumento es la posicion del array a la que se va
-                           //* a aplicar los cambios, el segundo dice cuantos elementos se
-                           //* van a eliminar contando del que se empieza, y después se 
-                           //* agregan nuevos valores al array 
-                           //* escribiendo -1 te lo pone al final y en argumento 2 si pones
-                           //* 0 no borra (ns que pasa si pones -1)
+let splice = xarray.splice(-1, 0, " string extra*");
+document.write(`<br> ${xarray}`); //* "Este es un array string extra cualquiera"
+                                  //todo para poner al final ago es mejor push
+                                  //todo no devuelva nada a quien lo llama 
+                           //? el primer argumento es la posicion del array a la que se va
+                           //? a aplicar los cambios, el segundo dice cuantos elementos se
+                           //? van a eliminar contando del que se empieza, y después se 
+                           //? agregan nuevos valores al array 
+                           //? escribiendo -1 te lo pone al final y en argumento 2 si pones
+                           //? 0 no borra (ns que pasa si pones -1)
+
+
+//todo            Metodos de arrays accesores
+
+//!Estos no modifican el array original, si no que crean uno nuevo en base al original
+function toShow (arrayModificado) {
+   document.write(`<br> ${arrayModificado}`)
+}
+
+let bArray = ["Este es", " un array", " cualquiera"]
+let cArray = ["Este es", " otro array", " cualquiera"]
+
+
+let join = bArray.join("  ") //? join convierte a un solo string y el argumento que le damos
+                              //? se pone entre cada dato en la nueva cadena de texto 
+                              //? los espacios en blanco no se estakean 
+toShow(join)//* "Este es un array cualquiera"
+
+
+let slice = bArray.slice(0, 2) //?el primer parametro definde desde donde se empieza y el 
+                               //? segundo desde donde termina el nuevo array, la posición
+                               //? del 2do parametro no es incluida. Si queremos seleccionar 
+                               //? el anteultimo se pone -1 (si se quiere seleccionar todos
+                               //? no se pondria argumento, pero no tendria sentido hacer el
+                               //? quilombo para dejar el array igual, por que seleccionas todo 
+
+toShow(slice)//todo se puede entender que el primer argumento es por posición y el segundo 
+             //todo cantidad 
+
+
+//todo toString, incule y los index funcionan practicamente igual en los array 
+
+let lastIndexof = bArray.lastIndexOf("s")//? los 2 tipos de array buscan la concidencia desde
+                                         //? el primer caracter de cada array, lo que cambia
+                                         //? es de cual dato empiezan a buscar
+toShow(lastIndexof)//* -1 
+
+
+//todo filter for-each
+
+bArray.forEach(a => a.length);//? Esto trabajo como un bucle for in, el primer argumento
+                     //? va a ser como se llama la posición actual del array y depués va una 
+                     //? función flecha que te dice que hacer
+                    
+
+
+
+
