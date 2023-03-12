@@ -862,16 +862,120 @@ toShow(slice)//todo se puede entender que el primer argumento es por posición y
 let lastIndexof = bArray.lastIndexOf("s")//? los 2 tipos de array buscan la concidencia desde
                                          //? el primer caracter de cada array, lo que cambia
                                          //? es de cual dato empiezan a buscar
-toShow(lastIndexof)//* -1 
+toShow(lastIndexof);//* -1 
 
 
 //todo filter for-each
 
-bArray.forEach(a => a.length);//? Esto trabajo como un bucle for in, el primer argumento
-                     //? va a ser como se llama la posición actual del array y depués va una 
-                     //? función flecha que te dice que hacer
-                    
+//? Esto es como un bucle for in, el primer argumento se pone el nombre de la variable, cuyo
+//? valor va a ser el de la posición del array al que le aplicamos el metodo. después la 
+//? función flecha abre lo que se va a hacer  
+
+bArray.forEach(i => alert(i)); //* "Esto es"; " un array"; " cualquiera"
+
+//? Con filter se puede hacer un cosa más, puede elegir si un dato es devuelto o no cuando 
+//? según la condicion que pongamos, cuando lo llaman. Eso quiere decir:
+
+let nuevoArray = bArray.filter(i => i.length > 7);
+alert(nuevoArray);//* " un array cualquiera"
+
+
+//!                                       OBJETO MATH
+
+//todo El objeto math esta echo para suar usar sus metodos y algunas propiedades 
+
+//todo Metodos:
+
+//? sb= cubic; sq = square;
+let raizCuadrada = Math.sqrt(9);//* 3
+let raizCubica = Math.cbrt(8);  //* 2
+
+let nMayor = Math.max(20,31,12,36); //* 36
+let nMenor = Math.min(20,31,12,36, -12); //* 12
+
+let pRandom = Math.random();
+let pRedondear = Math.round(4.7);//* 5
+let pFloor = Math.floor(-1.999);//* redonde para abajo, osea cuando n es -, te da n.trunc -1 
+let pTruncar = Math.trunc(-1.999);//* Saca las decimas 
+alert(pFloor);
+alert(pTruncar);
+
+let pRedondearDecimales = Math.fround(1.899);//* suele devolver el n con 15 decimales 
+alert(pRedondearDecimales);
+
+
+//todo Propiedades 
+//? aca obviamente va a ver valores, que js los saca con el metodo fround, por eso tiene 
+//? 15 decimales
+//* los logaritmos naturales (ln) son en abse e
+
+let e = Math.E;
+let ln2 = Math.LN2;
+let ln10 = Math.LN10;
+let log2e = Math.LOG2E;
+let log10e = Math.LOG10E;
 
 
 
 
+
+//! PROBLEMA DE COFLA AGREGAR POTENCIAS, RAICES CUADRADAS Y CUBICAS A LA CALCULADORA
+function sq (n1,n2){
+   let resultado = n1;
+   if (n2 == 0){resultado = 1}
+   for (i = 1; i < n2; i = i + 1){resultado = resultado*n1}
+   return resultado
+}//* funcion para elevaciones, contemplando que los elevadores son numeros naturales
+
+let n1 = prompt("1er numero");
+let n1n = Number(n1);
+
+s: while(!(          n1 === "0" ||(    !(n1n == 0)  && Infinity > n1n )    )  ){
+
+   n1 = prompt("1er numero")
+
+   n1n = Number(n1)
+   if(n1 === "0" ||(   !(n1n == 0) && Infinity > n1n )      ) {
+      break s
+   }
+}//* todo esto para diferenciar "" de un 0
+
+qhacer = undefined;
+
+function queh(){qhacer = prompt(`el 1er numero se va a +, -, x, % o ^ por otro
+                     para raiz cuadra = raiz2 y para raiz cubica raiz3`);}
+
+
+c: while(!(qhacer === "+"|| qhacer === "-" || qhacer === "x"|| qhacer ==="X" || qhacer === "*" || qhacer === "^"|| qhacer === "raiz2"|| qhacer === "raiz3"|| qhacer === "%" || qhacer === "/")){
+   queh()
+   if((qhacer === "+"|| qhacer === "-" || qhacer === "x"|| qhacer ==="X" || qhacer === "*" || qhacer === "^"|| qhacer === "raiz2"|| qhacer === "raiz3" || qhacer === "%" || qhacer === "/")) {
+      break c
+   }
+}//* todo esto para que solo se puedan poner la operaciones a ahacer
+
+let n2 = prompt(`2do numero`)
+
+let n2n = Number(n2);
+s2: while(!(          n2 === "0" ||(    !(n2n == 0)  && Infinity > n2n )    )  ){
+
+   n2 = prompt("2do numero")
+
+   n2n = Number(n2)
+   if(n2 === "0" ||(   !(n2n == 0) && Infinity > n2n )      ) {
+      break s2
+   }
+}//* todo esto para diferenciar "" de un 0
+
+if (qhacer == "+") {let result = n1n + n2n
+   alert(result)}
+else if (qhacer == "*" || qhacer == "x" || qhacer =="X") {let result = n1n * n2n
+   alert(result)}
+else if (qhacer == "-") {let result = n1n - n2n
+   alert(result)}
+else if (qhacer == "^"){let result = sq(n1n, n2n); alert(result)}
+else if (qhacer == "raiz2"){alert(Math.sqrt(n1n))}
+else if (qhacer == "raiz3"){alert(Math.cbrt(n1n))}
+else {let result = n1n / n2n; alert(result)}
+
+//! si queres tener las mismas propiedades en un extend, se pone el constructor vacio y se
+//! sobre entiende que no cambian 
