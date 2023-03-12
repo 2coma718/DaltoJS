@@ -979,3 +979,9 @@ else {let result = n1n / n2n; alert(result)}
 
 //! si queres tener las mismas propiedades en un extend, se pone el constructor vacio y se
 //! sobre entiende que no cambian 
+
+class calculator extend Math {
+  constructor(){}
+  
+  sumar(n1,n2){}
+}
