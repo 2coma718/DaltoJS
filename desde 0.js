@@ -920,68 +920,117 @@ let log10e = Math.LOG10E;
 
 
 //! PROBLEMA DE COFLA AGREGAR POTENCIAS, RAICES CUADRADAS Y CUBICAS A LA CALCULADORA
-function sq (n1,n2){
-   let resultado = n1;
-   if (n2 == 0){resultado = 1}
-   for (i = 1; i < n2; i = i + 1){resultado = resultado*n1}
-   return resultado
-}//* funcion para elevaciones, contemplando que los elevadores son numeros naturales
+// function sq (n1,n2){
+//    let resultado = n1;
+//    if (n2 == 0){resultado = 1}
+//    for (i = 1; i < n2; i = i + 1){resultado = resultado*n1}
+//    return resultado
+// }//* funcion para elevaciones, contemplando que los elevadores son numeros naturales
 
-let n1 = prompt("1er numero");
-let n1n = Number(n1);
+// let n1 = prompt("1er numero");
+// let n1n = Number(n1);
 
-s: while(!(          n1 === "0" ||(    !(n1n == 0)  && Infinity > n1n )    )  ){
+// s: while(!( n1 === "0" ||(    !(n1n == 0)  && Infinity > n1n )    )  ){
 
-   n1 = prompt("1er numero")
+//    n1 = prompt("1er numero")
 
-   n1n = Number(n1)
-   if(n1 === "0" ||(   !(n1n == 0) && Infinity > n1n )      ) {
-      break s
-   }
-}//* todo esto para diferenciar "" de un 0
+//    n1n = Number(n1)
+//    if(n1 === "0" ||(   !(n1n == 0) && Infinity > n1n )      ) {
+//       break s
+//    }
+// }//* todo esto para diferenciar "" de un 0
 
-qhacer = undefined;
+// //* todo esto para que solo se puedan poner la operaciones a ahacer
 
-function queh(){qhacer = prompt(`el 1er numero se va a +, -, x, % o ^ por otro
-                     para raiz cuadra = raiz2 y para raiz cubica raiz3`);}
+// let n2 = prompt(`2do numero`)
 
+// let n2n = Number(n2);
+// s2: while(!(          n2 === "0" ||(    !(n2n == 0)  && Infinity > n2n )    )  ){
 
-c: while(!(qhacer === "+"|| qhacer === "-" || qhacer === "x"|| qhacer ==="X" || qhacer === "*" || qhacer === "^"|| qhacer === "raiz2"|| qhacer === "raiz3"|| qhacer === "%" || qhacer === "/")){
-   queh()
-   if((qhacer === "+"|| qhacer === "-" || qhacer === "x"|| qhacer ==="X" || qhacer === "*" || qhacer === "^"|| qhacer === "raiz2"|| qhacer === "raiz3" || qhacer === "%" || qhacer === "/")) {
-      break c
-   }
-}//* todo esto para que solo se puedan poner la operaciones a ahacer
+//    n2 = prompt("2do numero")
 
-let n2 = prompt(`2do numero`)
+//    n2n = Number(n2)
+//    if(n2 === "0" ||(   !(n2n == 0) && Infinity > n2n )      ) {
+//       break s2
+//    }
+// }//* todo esto para diferenciar "" de un 0
 
-let n2n = Number(n2);
-s2: while(!(          n2 === "0" ||(    !(n2n == 0)  && Infinity > n2n )    )  ){
-
-   n2 = prompt("2do numero")
-
-   n2n = Number(n2)
-   if(n2 === "0" ||(   !(n2n == 0) && Infinity > n2n )      ) {
-      break s2
-   }
-}//* todo esto para diferenciar "" de un 0
-
-if (qhacer == "+") {let result = n1n + n2n
-   alert(result)}
-else if (qhacer == "*" || qhacer == "x" || qhacer =="X") {let result = n1n * n2n
-   alert(result)}
-else if (qhacer == "-") {let result = n1n - n2n
-   alert(result)}
-else if (qhacer == "^"){let result = sq(n1n, n2n); alert(result)}
-else if (qhacer == "raiz2"){alert(Math.sqrt(n1n))}
-else if (qhacer == "raiz3"){alert(Math.cbrt(n1n))}
-else {let result = n1n / n2n; alert(result)}
+// if (qhacer == "+") {let result = n1n + n2n
+//    alert(result)}
+// else if (qhacer == "*" || qhacer == "x" || qhacer =="X") {let result = n1n * n2n
+//    alert(result)}
+// else if (qhacer == "-") {let result = n1n - n2n
+//    alert(result)}
+// else if (qhacer == "^"){let result = sq(n1n, n2n); alert(result)}
+// else if (qhacer == "raiz2"){alert(Math.sqrt(n1n))}
+// else if (qhacer == "raiz3"){alert(Math.cbrt(n1n))}
+// else {let result = n1n / n2n; alert(result)}
 
 //! si queres tener las mismas propiedades en un extend, se pone el constructor vacio y se
 //! sobre entiende que no cambian 
 
-class calculator extend Math {
-  constructor(){}
-  
-  sumar(n1,n2){}
+class Calculator {
+   constructor (a,b,c){
+      this.n1 = a;
+      this.op = b;
+      this.n2 = c;  
+   }   
+
+   set sn1 (pn) {this.n1 = pn}
+   set sn2 (pn2) {this.n2 = pn2}
+   set sOp (pOp) {this.op = pOp}
+
+   obtDt (){
+      //? PRIMER NUMERO
+            let pn = prompt("1er numero");
+            while(!( pn === "0" ||((!pn == 0)  && Infinity > pn )))
+            {pn = prompt("1er numero")}
+            this.sn1 = pn; 
+
+
+            //? Que cuenta hacer
+            let pOp = undefined;
+
+            function fpOp()
+            {pOp = prompt(`el 1er numero se va a +, -, x, % o ^ por otro
+            para raiz cuadra = raiz2 y para raiz cubica raiz3`);
+            }
+
+            function fbpOp (pOp)
+            {return (!(pOp === "+"|| pOp === "-" || pOp === "x"|| pOp ==="X" || pOp === "*" || pOp === "^"|| pOp === "raiz2"|| pOp === "raiz3"|| pOp === "%" || pOp === "/"))}
+
+            c: while(fbpOp(pOp)){
+            fpOp()     
+            }
+            this.sOp = pOp;
+
+
+            //? SEGUNDO NUMERO
+            if(!(this.op == "raiz2"||this.op == "raiz3")) {
+            let pn2 = prompt("2do numero");
+            
+            while(!( pn2 === "0" ||((!pn2 == 0)  && Infinity > pn2 )))
+            {pn2 = prompt("2do numero")}
+
+            this.sn2 = pn2
+         }      
+      
+   }
+
+      operar (){
+         if (this.op == "+") {alert(this.n1  + this.n2)}
+         else if (this.op == "*" || this.op == "x" || this.op =="X") {alert(this.n1 * this.n2)}
+         else if (this.op == "-") {alert(this.n1 - this.n2)}
+         else if (this.op == "^"){alert(`<b style = 'color:red'> ${this.n1 ** this.n2} </b>`)}
+         else if (this.op == "raiz2"){alert(Math.sqrt(this.n1))}
+         else if (this.op == "raiz3"){alert(Math.cbrt(this.n1))}
+         else {alert(this.n1 / this.n2)}
+   
+      }
 }
+
+
+let calculadora = new Calculator;
+
+calculadora.obtDt();
+calculadora.operar();
